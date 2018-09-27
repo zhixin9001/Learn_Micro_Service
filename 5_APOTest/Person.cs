@@ -9,6 +9,7 @@ namespace _5_APOTest
         [CustomInterceptor]
         public virtual void Say(string msg)
         {
+            throw new Exception();
             Console.WriteLine("service calling..." + msg);
         }
     }
