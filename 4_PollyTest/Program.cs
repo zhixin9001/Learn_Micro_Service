@@ -2,12 +2,13 @@
 using Polly.Timeout;
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace _4_PollyTest
 {
     class Program
     {
-        static async void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
 
@@ -73,26 +74,35 @@ namespace _4_PollyTest
             //    });
 
 
-             TestAsync();
+            TestAsync().Wait() ;
             Console.ReadKey();
         }
 
-        private async static int TestAsync()
+        private async static Task TestAsync()
         {
             Policy policy2 = Policy.Handle</*Exception*/ TimeoutRejectedException>().FallbackAsync(async (c) =>
             {
                 Console.WriteLine("fallback");
-                return new Task<int>(0);
             });
 
-            Policy policy3 = Policy.TimeoutAsync(3, Polly.Timeout.TimeoutStrategy.Pessimistic);
-            Policy policy4 = policy2.WrapAsync(policy3);
-          await  policy4.ExecuteAsync(async () =>
-            {
-                Console.WriteLine("begin task");
-                Thread.Sleep(4000);
+            //Policy policy3 = Policy.TimeoutAsync(3, Polly.Timeout.TimeoutStrategy.Pessimistic);
+            //Policy policy4 = policy2.WrapAsync(policy3);
+            //await policy4.ExecuteAsync(async () =>
+            // {
+            //     Console.WriteLine("begin task");
+            //     Thread.Sleep(4000);
 
-                //throw new ArgumentException();
+            //    //throw new ArgumentException();
+            //});
+
+            policy2 = policy2.WrapAsync(Policy.TimeoutAsync(3, TimeoutStrategy.Pessimistic, async (content, timespan, task) => {
+                Console.WriteLine("timeout");
+            }));
+
+            await policy2.ExecuteAsync(async()=> {
+                Console.WriteLine("begin execute");
+                await Task.Delay(5000);
+                Console.WriteLine("finish");
             });
         }
     }

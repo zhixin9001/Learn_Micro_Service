@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsgService", "MsgService\Ms
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceConsumer", "ServiceConsumer\ServiceConsumer.csproj", "{CFD2A469-22EB-4C28-8DC0-8BD39C1440A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4_PollyTest", "4_PollyTest\4_PollyTest.csproj", "{B0C08DD4-E026-4B0E-BC20-DD64AA56D843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "4_PollyTest", "4_PollyTest\4_PollyTest.csproj", "{B0C08DD4-E026-4B0E-BC20-DD64AA56D843}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5_APOTest", "5_APOTest\5_APOTest.csproj", "{964246B8-8D6B-43D7-B7F3-AE34D6E8EA27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B0C08DD4-E026-4B0E-BC20-DD64AA56D843}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0C08DD4-E026-4B0E-BC20-DD64AA56D843}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0C08DD4-E026-4B0E-BC20-DD64AA56D843}.Release|Any CPU.Build.0 = Release|Any CPU
+		{964246B8-8D6B-43D7-B7F3-AE34D6E8EA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{964246B8-8D6B-43D7-B7F3-AE34D6E8EA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{964246B8-8D6B-43D7-B7F3-AE34D6E8EA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{964246B8-8D6B-43D7-B7F3-AE34D6E8EA27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
