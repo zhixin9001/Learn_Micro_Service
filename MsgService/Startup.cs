@@ -38,30 +38,30 @@ namespace MsgService
             string serviceName = "MsgService";
             string serviceId = serviceName + Guid.NewGuid();
 
-            using (var consulClient = new ConsulClient(consulConfig))
-            {
-                AgentServiceRegistration asr = new AgentServiceRegistration();
-                asr.Address = ip;
-                asr.Port = Convert.ToInt32(port);
-                asr.ID = serviceId;
-                asr.Name = serviceName;
-                asr.Check = new AgentServiceCheck()
-                {
-                    DeregisterCriticalServiceAfter = TimeSpan.FromSeconds(5),
-                    HTTP = $"http://{ip}:{port}/api/Health",
-                    Interval = TimeSpan.FromSeconds(10),
-                    Timeout = TimeSpan.FromSeconds(5)
-                };
-                consulClient.Agent.ServiceRegister(asr).Wait();
-            };
+            //using (var consulClient = new ConsulClient(consulConfig))
+            //{
+            //    AgentServiceRegistration asr = new AgentServiceRegistration();
+            //    asr.Address = ip;
+            //    asr.Port = Convert.ToInt32(port);
+            //    asr.ID = serviceId;
+            //    asr.Name = serviceName;
+            //    asr.Check = new AgentServiceCheck()
+            //    {
+            //        DeregisterCriticalServiceAfter = TimeSpan.FromSeconds(5),
+            //        HTTP = $"http://{ip}:{port}/api/Health",
+            //        Interval = TimeSpan.FromSeconds(10),
+            //        Timeout = TimeSpan.FromSeconds(5)
+            //    };
+            //    consulClient.Agent.ServiceRegister(asr).Wait();
+            //};
 
-            appLifetime.ApplicationStopped.Register(() => {
-                using (var consulClient = new ConsulClient(consulConfig))
-                {
-                    Console.WriteLine("应用退出，开始从consul注销");
-                    consulClient.Agent.ServiceDeregister(serviceId).Wait();
-                }
-            });
+            //appLifetime.ApplicationStopped.Register(() => {
+            //    using (var consulClient = new ConsulClient(consulConfig))
+            //    {
+            //        Console.WriteLine("应用退出，开始从consul注销");
+            //        consulClient.Agent.ServiceDeregister(serviceId).Wait();
+            //    }
+            //});
         }
 
         private void consulConfig(ConsulClientConfiguration c)

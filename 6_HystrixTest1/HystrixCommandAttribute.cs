@@ -71,7 +71,7 @@ TimeSpan.FromMilliseconds(RetryIntervalMilliseconds)));
 
                     Policy policyFallBack = Policy.Handle<Exception>().FallbackAsync(async (ctx, t) =>
                     {
-                        AspectContext aspectContext = (AspectContext)ctx["aspectContent"];
+                        AspectContext aspectContext = (AspectContext)ctx["aspectContext"];
                         var fallBackMethod = context.ServiceMethod.DeclaringType.GetMethod(this.FallBackMethod);
                         Object fallBackResult = fallBackMethod.Invoke(context.Implementation, context.Parameters);
                         aspectContext.ReturnValue = fallBackResult;
