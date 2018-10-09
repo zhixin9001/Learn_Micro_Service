@@ -8,12 +8,11 @@
       ],
       "DownstreamScheme": "http",
       "DownstreamPathTemplate": "/api/{url}",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5001
-        }
-      ]
+      "ServiceName": "MsgService",
+      "LoadBalanceOptions": {
+        "Type": "RoundRobin"
+      },
+      "UseServiceDiscovery": true
     },
     {
       "UpstreamPathTemplate": "/ProductService/{url}",
@@ -23,12 +22,17 @@
       ],
       "DownstreamScheme": "http",
       "DownstreamPathTemplate": "/api/{url}",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5003
-        }
-      ]
+      "ServiceName": "ProductService",
+      "LoadBalanceOptions": {
+        "Type": "RoundRobin"
+      },
+      "UseServiceDiscovery": true
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500
+    }
+  }
 }

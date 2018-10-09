@@ -13,6 +13,7 @@ namespace ProductService.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            Console.WriteLine("requesting-"+DateTime.Now.ToString());
             return new string[] { "value1", "value2" };
         }
 
