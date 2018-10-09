@@ -39,7 +39,7 @@ namespace ProductService
 
             string ip = Configuration["ip"];
             string port = Configuration["port"];
-            string serviceName = "MsgService";
+            string serviceName = "ProductService";
             string serviceId = serviceName + Guid.NewGuid();
 
             using (var consulClient = new ConsulClient(consulConfig))

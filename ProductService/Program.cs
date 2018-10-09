@@ -14,7 +14,16 @@ namespace ProductService
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            //BuildWebHost(args).Run();
+            CreateWebhostBuilder(args).Build().Run();
+        }
+
+        public static IWebHostBuilder CreateWebhostBuilder(string[] args)
+        {
+            var config = new ConfigurationBuilder().AddCommandLine(args).Build();
+            string ip = config["ip"];
+            string port = config["port"];
+            return WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().UseUrls($"http://{ip}:{port}");
         }
 
         public static IWebHost BuildWebHost(string[] args) =>

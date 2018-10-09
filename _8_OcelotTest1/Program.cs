@@ -14,12 +14,19 @@ namespace _8_OcelotTest1
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            //BuildWebHost(args).Run();
+            CreateWebhostBuilder(args).Build().Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IWebHostBuilder CreateWebhostBuilder(string[] args)
+        {
+            return WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .Build();
+                .UseUrls("http://127.0.0.1:8888")
+                .ConfigureAppConfiguration((hostingContext, builder) =>
+                {
+                    builder.AddJsonFile("configuration.json", false, true);
+                });
+        }
     }
 }
