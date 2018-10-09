@@ -35,6 +35,8 @@ namespace ProductService
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMvc();
+
             string ip = Configuration["ip"];
             string port = Configuration["port"];
             string serviceName = "MsgService";
