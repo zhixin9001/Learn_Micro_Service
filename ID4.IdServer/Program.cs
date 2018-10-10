@@ -20,6 +20,7 @@ namespace ID4.IdServer
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:9500")
                 .Build();
     }
 }

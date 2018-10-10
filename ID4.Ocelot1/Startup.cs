@@ -24,7 +24,7 @@ namespace ID4.Ocelot1
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            Action<IdentityServerAuthenticationOptions> issOptMsg = o =>
+            Action<IdentityServerAuthenticationOptions> isaOptMsg = o =>
             {
                 o.Authority = "http://localhost:9500";
                 o.ApiName = "MsgAPI";
@@ -33,7 +33,7 @@ namespace ID4.Ocelot1
                 o.ApiSecret = "123321";
             };
 
-            Action<IdentityServerAuthenticationOptions> issOptProduct = o =>
+            Action<IdentityServerAuthenticationOptions> isaOptProduct = o =>
             {
                 o.Authority = "http://localhost:9500";
                 o.ApiName = "ProductAPI";
@@ -42,8 +42,10 @@ namespace ID4.Ocelot1
                 o.ApiSecret = "123321";
             };
 
-            services.AddAuthorization();
-            services.AddOcelot(this.Configuration);
+            services.AddAuthentication()
+                .AddIdentityServerAuthentication("MsgKey",isaOptMsg)
+                .AddIdentityServerAuthentication("ProductKey", isaOptProduct);
+            services.AddOcelot();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
