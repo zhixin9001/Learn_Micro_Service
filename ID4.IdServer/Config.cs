@@ -22,10 +22,28 @@ namespace ID4.IdServer
             List<Client> clients = new List<Client>();
             clients.Add(new Client
             {
-                ClientId = "clientPC1",
+                ClientId = "clientPC",
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
                 ClientSecrets = {
                     new Secret("123321".Sha256())
+                },
+                AllowedScopes = { "MsgAPI", "ProductAPI" }
+            });
+            clients.Add(new Client
+            {
+                ClientId = "clientAndroid",
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                ClientSecrets = {
+                    new Secret("123456".Sha256())
+                },
+                AllowedScopes = { "MsgAPI", "ProductAPI" }
+            });
+            clients.Add(new Client
+            {
+                ClientId = "clientIOS",
+                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                ClientSecrets = {
+                    new Secret("654321".Sha256())
                 },
                 AllowedScopes = { "MsgAPI", "ProductAPI" }
             });

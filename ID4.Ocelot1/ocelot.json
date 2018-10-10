@@ -1,0 +1,45 @@
+﻿{
+  "ReRoutes": [
+    {
+      "UpstreamPathTemplate": "/MsgService/{url}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Post"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/{url}",
+      "ServiceName": "MsgService",
+      "LoadBalanceOptions": {
+        "Type": "RoundRobin"
+      },
+      "UseServiceDiscovery": true,
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MsgKey",
+        "AllowScopes": []
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/ProductService/{url}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Post"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/{url}",
+      "ServiceName": "ProductService",
+      "LoadBalanceOptions": {
+        "Type": "RoundRobin"
+      },
+      "UseServiceDiscovery": true,
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "MsgKey",
+        "AllowScopes": []
+      },
+
+      "GlobalConfiguration": {
+        "ServiceDiscoveryProvider": {
+          "Host": "localhost",
+          "Port": 8500
+        }
+      }
+    }
