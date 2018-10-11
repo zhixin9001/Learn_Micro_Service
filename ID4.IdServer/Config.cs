@@ -1,4 +1,5 @@
-﻿using IdentityServer4.Models;
+﻿using IdentityServer4;
+using IdentityServer4.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,29 +24,34 @@ namespace ID4.IdServer
             clients.Add(new Client
             {
                 ClientId = "clientPC",
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = {
                     new Secret("123321".Sha256())
                 },
-                AllowedScopes = { "MsgAPI", "ProductAPI" }
+                //AllowedScopes = { "MsgAPI", "ProductAPI" }
+                AllowedScopes = { "MsgAPI", "ProductAPI", IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile }
             });
             clients.Add(new Client
             {
                 ClientId = "clientAndroid",
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = {
                     new Secret("123456".Sha256())
                 },
-                AllowedScopes = { "MsgAPI", "ProductAPI" }
+                //AllowedScopes = { "MsgAPI", "ProductAPI" }
+                AllowedScopes = { "MsgAPI", "ProductAPI", IdentityServerConstants.StandardScopes.OpenId, IdentityServerConstants.StandardScopes.Profile }
             });
             clients.Add(new Client
             {
                 ClientId = "clientIOS",
-                AllowedGrantTypes = GrantTypes.ClientCredentials,
+                //AllowedGrantTypes = GrantTypes.ClientCredentials,
+                AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                 ClientSecrets = {
                     new Secret("654321".Sha256())
                 },
-                AllowedScopes = { "MsgAPI", "ProductAPI" }
+                //AllowedScopes = { "MsgAPI", "ProductAPI" }
+                AllowedScopes = { "MsgAPI", "ProductAPI" ,IdentityServerConstants.StandardScopes.OpenId,IdentityServerConstants.StandardScopes.Profile}
+
             });
             return clients;
         }

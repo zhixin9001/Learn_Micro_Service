@@ -19,6 +19,12 @@ namespace MsgService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(option=>
+                    {
+                        option.Authority = "http://localhost:9500";
+                        option.RequireHttpsMetadata = false;
+                    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,6 +36,7 @@ namespace MsgService
             }
 
             app.UseMvc();
+            app.UseAuthentication();
 
             string ip = Configuration["ip"];
             string port = Configuration["port"];
