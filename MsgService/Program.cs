@@ -23,6 +23,8 @@ namespace MsgService
             var config = new ConfigurationBuilder().AddCommandLine(args).Build();
             string ip = config["ip"];
             string port = config["port"];
+            //ip="127.0.0.1";
+            //port = "5002";
             return WebHost.CreateDefaultBuilder(args).UseStartup<Startup>().UseUrls($"http://{ip}:{port}");
         }
 
