@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ocelot+id4", "ocelot+id4", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID4.IdServer", "ID4.IdServer\ID4.IdServer.csproj", "{E276146E-0BD5-4BA1-9700-613AD09D9AA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID4.Ocelot1", "ID4.Ocelot1\ID4.Ocelot1.csproj", "{588B4AF9-D754-4630-9E03-8971FDF00E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID4.Ocelot1", "ID4.Ocelot1\ID4.Ocelot1.csproj", "{588B4AF9-D754-4630-9E03-8971FDF00E92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID4.LoginService", "ID4.LoginService\ID4.LoginService.csproj", "{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{588B4AF9-D754-4630-9E03-8971FDF00E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{588B4AF9-D754-4630-9E03-8971FDF00E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{588B4AF9-D754-4630-9E03-8971FDF00E92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,6 +102,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E276146E-0BD5-4BA1-9700-613AD09D9AA9} = {51A8BE77-A6B5-454C-9F53-EDC8C5E43F2C}
 		{588B4AF9-D754-4630-9E03-8971FDF00E92} = {51A8BE77-A6B5-454C-9F53-EDC8C5E43F2C}
+		{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE} = {51A8BE77-A6B5-454C-9F53-EDC8C5E43F2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1475E4CD-3A7E-4D2B-A4F5-7E3E154F719A}
