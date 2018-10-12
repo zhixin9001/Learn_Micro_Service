@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftTest1.Server", "Thrif
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID4.LoginService", "ID4.LoginService\ID4.LoginService.csproj", "{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftTest1.Client", "ThriftTest1.Client\ThriftTest1.Client.csproj", "{10555AA4-90D8-4A98-BD52-DD846280AD65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -107,6 +109,10 @@ Global
 		{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74E6A2ED-25BD-4C52-8918-A2D3CDAD6DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10555AA4-90D8-4A98-BD52-DD846280AD65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10555AA4-90D8-4A98-BD52-DD846280AD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10555AA4-90D8-4A98-BD52-DD846280AD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10555AA4-90D8-4A98-BD52-DD846280AD65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
