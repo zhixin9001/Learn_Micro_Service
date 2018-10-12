@@ -29,7 +29,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ocelot+id4", "ocelot+id4", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID4.IdServer", "ID4.IdServer\ID4.IdServer.csproj", "{E276146E-0BD5-4BA1-9700-613AD09D9AA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ID4.Ocelot1", "ID4.Ocelot1\ID4.Ocelot1.csproj", "{588B4AF9-D754-4630-9E03-8971FDF00E92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ID4.Ocelot1", "ID4.Ocelot1\ID4.Ocelot1.csproj", "{588B4AF9-D754-4630-9E03-8971FDF00E92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftTest1.Contract", "ThriftTest1.Contract\ThriftTest1.Contract.csproj", "{AD47790C-1FD4-4DCF-A541-7D91B295010B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftTest1.Server", "ThriftTest1.Server\ThriftTest1.Server.csproj", "{BD7CD2E8-7FA5-4662-ACB4-089D0342247D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +93,14 @@ Global
 		{588B4AF9-D754-4630-9E03-8971FDF00E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{588B4AF9-D754-4630-9E03-8971FDF00E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{588B4AF9-D754-4630-9E03-8971FDF00E92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD47790C-1FD4-4DCF-A541-7D91B295010B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD47790C-1FD4-4DCF-A541-7D91B295010B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD47790C-1FD4-4DCF-A541-7D91B295010B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD47790C-1FD4-4DCF-A541-7D91B295010B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD7CD2E8-7FA5-4662-ACB4-089D0342247D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD7CD2E8-7FA5-4662-ACB4-089D0342247D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD7CD2E8-7FA5-4662-ACB4-089D0342247D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD7CD2E8-7FA5-4662-ACB4-089D0342247D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
